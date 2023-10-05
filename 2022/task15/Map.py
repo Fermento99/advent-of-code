@@ -8,7 +8,10 @@ class Map:
         self.state = ['.' for _ in range(max_x - min_x)]
     
     def set_point(self, point: list, val):
-        if point[1] == self.row:
+        if self.row:
+            if point[1] == self.row:
+                self.state[point[0]-self.min_x] = val
+        else:
             self.state[point[0]-self.min_x] = val
     
     def get_row(self, row):

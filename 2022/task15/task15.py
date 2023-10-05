@@ -15,7 +15,6 @@ for index, sensor in enumerate(sensors):
     covered_points = sensor.cover()
     for point in covered_points:
         map.set_point(point, '#')
-print()
 
 for sensor in sensors:
     map.set_point(sensor.sensor, 'S')
@@ -24,4 +23,6 @@ for sensor in sensors:
 
 row = map.get_row(2000000)
 count = len(list(filter(lambda x: x == '#', row)))
+print('Not possible places in row 2000000')
 print(count)
+
