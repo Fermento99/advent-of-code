@@ -11,9 +11,7 @@ namespace Day5 {
       return positions.Min();
     }
 
-    public static long Task2() {
-      IEnumerable<string> lines = FileReader.ReadFile("05");
-      
+    public static long Task2() {      
       return 0;
     }
   }
