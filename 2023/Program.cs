@@ -1,4 +1,4 @@
-﻿using CurrentDay = Day6;
+﻿using CurrentDay = Day7b;
 
 long result1 = CurrentDay.Solution.Task1();
 long result2 = CurrentDay.Solution.Task2();
