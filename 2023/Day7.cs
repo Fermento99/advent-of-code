@@ -10,10 +10,6 @@ namespace Day7 {
 
       return hands.CalculateValue();
     }
-
-    public static int Task2() {
-      return 0;
-    }
   }
 
   class HandList {

@@ -1,9 +1,5 @@
 namespace Day7b {
   public class Solution {
-    public static int Task1() {
-      return 0;
-    }
-
     public static int Task2() {
       IEnumerable<string> lines = FileReader.ReadFile("07");
       

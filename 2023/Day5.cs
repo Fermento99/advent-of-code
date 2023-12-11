@@ -10,10 +10,6 @@ namespace Day5 {
 
       return positions.Min();
     }
-
-    public static long Task2() {      
-      return 0;
-    }
   }
 
   class Pipeline {

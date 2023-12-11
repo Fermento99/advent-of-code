@@ -2,10 +2,6 @@ using System.Text.RegularExpressions;
 
 namespace Day5b {
   public class Solution {
-    public static long Task1() {
-      return 0;
-    }
-
     public static long Task2() {
       IEnumerable<string> lines = FileReader.ReadFile("05");
 
