@@ -1,15 +1,15 @@
 package main
 
 import (
-	task1 "aoc-24/tasks"
+	task "aoc-24/tasks/task2"
 	"aoc-24/utils"
 	"fmt"
 )
 
 func main() {
-	lines := utils.GetInput("01", false)
-	firstSolution := task1.FirstStar(lines)
-	secondSolution := task1.SecondStar(lines)
+	lines := utils.GetInput("02", false)
+	firstSolution := task.FirstStar(lines)
+	secondSolution := task.SecondStar(lines)
 
 	fmt.Println("First solution: ", firstSolution)
 	fmt.Println("Second solution: ", secondSolution)
