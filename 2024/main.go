@@ -1,13 +1,16 @@
 package main
 
 import (
-	task "aoc-24/tasks/task2"
+	task "aoc-24/tasks/task4"
 	"aoc-24/utils"
 	"fmt"
 )
 
+var knownInput bool = false
+var taskNumber string = "04"
+
 func main() {
-	lines := utils.GetInput("02", false)
+	lines := utils.GetInput(taskNumber, knownInput)
 	firstSolution := task.FirstStar(lines)
 	secondSolution := task.SecondStar(lines)
 
