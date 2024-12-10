@@ -1,7 +1,6 @@
 package task5
 
 import (
-	"fmt"
 	"sort"
 )
 
@@ -13,7 +12,7 @@ func SecondStar(lines []string) int {
 	for _, instructions := range lines[breakIndex+1:] {
 		sum += sortManuals(mapStringToNumbers(instructions), orderChecker)
 	}
-	fmt.Println(checkCounter)
+
 	return sum
 }
 

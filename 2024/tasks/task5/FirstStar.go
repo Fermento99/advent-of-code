@@ -1,12 +1,9 @@
 package task5
 
 import (
-	"fmt"
 	"strconv"
 	"strings"
 )
-
-var checkCounter int = 0
 
 func findEmptylineIndex(lines []string) int {
 	for index, line := range lines {
@@ -35,7 +32,7 @@ func FirstStar(lines []string) int {
 	for _, instructions := range lines[breakIndex+1:] {
 		sum += checkManual(mapStringToNumbers(instructions), orderChecker)
 	}
-	fmt.Println(checkCounter)
+
 	return sum
 }
 
@@ -70,8 +67,6 @@ func checkRule(instructions []int, rule [2]int) bool {
 		} else if instruction == rule[1] {
 			indices[1] = index
 		}
-
-		checkCounter++
 	}
 
 	if indices[0] == -1 || indices[1] == -1 || indices[0] < indices[1] {
