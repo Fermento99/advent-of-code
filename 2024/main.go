@@ -1,13 +1,13 @@
 package main
 
 import (
-	task "aoc-24/tasks/task5"
+	task "aoc-24/tasks/task6"
 	"aoc-24/utils"
 	"fmt"
 )
 
 var knownInput bool = false
-var taskNumber string = "05"
+var taskNumber string = "06"
 
 func main() {
 	lines := utils.GetInput(taskNumber, knownInput)

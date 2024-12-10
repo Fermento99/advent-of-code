@@ -27,3 +27,13 @@ func Abs(num int) int {
 
 	return -num
 }
+
+func ArrayContains[T comparable](tab []T, val T) bool {
+	for _, el := range tab {
+		if el == val {
+			return true
+		}
+	}
+
+	return false
+}
