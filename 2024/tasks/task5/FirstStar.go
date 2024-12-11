@@ -1,6 +1,7 @@
 package task5
 
 import (
+	"aoc-24/utils"
 	"strconv"
 	"strings"
 )
@@ -14,23 +15,13 @@ func findEmptylineIndex(lines []string) int {
 	return -1
 }
 
-func mapStringToNumbers(line string) []int {
-	numbers := strings.Split(line, ",")
-	tab := make([]int, len(numbers))
-	for index, number := range numbers {
-		tab[index], _ = strconv.Atoi(number)
-	}
-
-	return tab
-}
-
 func FirstStar(lines []string) int {
 	breakIndex := findEmptylineIndex(lines)
 	orderChecker := createOrderChecker(lines[:breakIndex])
 
 	sum := 0
 	for _, instructions := range lines[breakIndex+1:] {
-		sum += checkManual(mapStringToNumbers(instructions), orderChecker)
+		sum += checkManual(utils.MapStringToNumbers(instructions, ","), orderChecker)
 	}
 
 	return sum

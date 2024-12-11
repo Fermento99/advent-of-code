@@ -1,6 +1,7 @@
 package task5
 
 import (
+	"aoc-24/utils"
 	"sort"
 )
 
@@ -10,7 +11,7 @@ func SecondStar(lines []string) int {
 
 	sum := 0
 	for _, instructions := range lines[breakIndex+1:] {
-		sum += sortManuals(mapStringToNumbers(instructions), orderChecker)
+		sum += sortManuals(utils.MapStringToNumbers(instructions, ","), orderChecker)
 	}
 
 	return sum

@@ -2,6 +2,7 @@ package utils
 
 import (
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -36,4 +37,14 @@ func ArrayContains[T comparable](tab []T, val T) bool {
 	}
 
 	return false
+}
+
+func MapStringToNumbers(line string, delim string) []int {
+	numbers := strings.Split(line, " ")
+	tab := make([]int, len(numbers))
+	for index, number := range numbers {
+		tab[index], _ = strconv.Atoi(number)
+	}
+
+	return tab
 }
