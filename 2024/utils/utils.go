@@ -40,7 +40,7 @@ func ArrayContains[T comparable](tab []T, val T) bool {
 }
 
 func MapStringToNumbers(line string, delim string) []int {
-	numbers := strings.Split(line, " ")
+	numbers := strings.Split(line, delim)
 	tab := make([]int, len(numbers))
 	for index, number := range numbers {
 		tab[index], _ = strconv.Atoi(number)
