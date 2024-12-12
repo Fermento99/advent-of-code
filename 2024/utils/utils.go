@@ -48,3 +48,13 @@ func MapStringToNumbers(line string, delim string) []int {
 
 	return tab
 }
+
+func Pow(base, exponent int) int {
+	out := base
+
+	for range exponent - 1 {
+		out *= base
+	}
+
+	return out
+}

@@ -47,7 +47,7 @@ func evalOperation(a, b int, operator string) int {
 	case "*":
 		return a * b
 	case "||":
-		return a*pow(10, intLength(b)) + b
+		return a*utils.Pow(10, intLength(b)) + b
 	}
 	return 0
 }
@@ -66,7 +66,7 @@ func getCombinations(length int, operators []string) [][]string {
 
 	combinations := getCombinations(length-1, operators)
 	operatorCount := len(operators)
-	nextCombinations := make([][]string, pow(operatorCount, length))
+	nextCombinations := make([][]string, utils.Pow(operatorCount, length))
 
 	for index, combination := range combinations {
 		newCombinations := make([][]string, operatorCount)
@@ -86,16 +86,6 @@ func getCombinations(length int, operators []string) [][]string {
 	}
 
 	return nextCombinations
-}
-
-func pow(base, exponent int) int {
-	out := base
-
-	for range exponent - 1 {
-		out *= base
-	}
-
-	return out
 }
 
 func intLength(n int) int {
