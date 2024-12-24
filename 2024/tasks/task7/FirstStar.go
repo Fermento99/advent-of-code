@@ -47,7 +47,7 @@ func evalOperation(a, b int, operator string) int {
 	case "*":
 		return a * b
 	case "||":
-		return a*utils.Pow(10, intLength(b)) + b
+		return a*utils.Pow(10, utils.IntLength(b)) + b
 	}
 	return 0
 }
@@ -86,16 +86,4 @@ func getCombinations(length int, operators []string) [][]string {
 	}
 
 	return nextCombinations
-}
-
-func intLength(n int) int {
-	digits := 1
-	reminder := n / 10
-
-	for reminder > 0 {
-		digits++
-		reminder /= 10
-	}
-
-	return digits
 }

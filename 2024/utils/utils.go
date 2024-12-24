@@ -58,3 +58,15 @@ func Pow(base, exponent int) int {
 
 	return out
 }
+
+func IntLength(n int) int {
+	digits := 1
+	reminder := n / 10
+
+	for reminder > 0 {
+		digits++
+		reminder /= 10
+	}
+
+	return digits
+}
