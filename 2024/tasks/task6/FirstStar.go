@@ -5,10 +5,7 @@ import (
 	"regexp"
 )
 
-type Point struct {
-	X int
-	Y int
-}
+type Point = utils.Point
 
 func FirstStar(lines []string) int {
 	visitedMap := createVisitedMap(len(lines), len(lines[0]))
@@ -48,18 +45,18 @@ func findGuard(lines []string) Point {
 	for y, line := range lines {
 		x := guardRegex.FindStringIndex(line)
 		if len(x) > 0 {
-			return Point{x[0], y}
+			return Point{X: x[0], Y: y}
 		}
 	}
 
-	return Point{-1, -1}
+	return Point{X: -1, Y: -1}
 }
 
 func nextGuardPosition(lines []string, guardPos Point, direction int) (Point, int) {
 	switch direction {
 	case 1:
 		if guardPos.Y-1 < 0 {
-			return Point{-1, -1}, -1
+			return Point{X: -1, Y: -1}, -1
 		}
 
 		if lines[guardPos.Y-1][guardPos.X] == '#' {
@@ -70,7 +67,7 @@ func nextGuardPosition(lines []string, guardPos Point, direction int) (Point, in
 		return guardPos, 1
 	case 2:
 		if guardPos.X+1 >= len(lines[0]) {
-			return Point{-1, -1}, -1
+			return Point{X: -1, Y: -1}, -1
 		}
 
 		if lines[guardPos.Y][guardPos.X+1] == '#' {
@@ -81,7 +78,7 @@ func nextGuardPosition(lines []string, guardPos Point, direction int) (Point, in
 		return guardPos, 2
 	case 3:
 		if guardPos.Y+1 >= len(lines) {
-			return Point{-1, -1}, -1
+			return Point{X: -1, Y: -1}, -1
 		}
 
 		if lines[guardPos.Y+1][guardPos.X] == '#' {
@@ -92,7 +89,7 @@ func nextGuardPosition(lines []string, guardPos Point, direction int) (Point, in
 		return guardPos, 3
 	case 4:
 		if guardPos.X-1 < 0 {
-			return Point{-1, -1}, -1
+			return Point{X: -1, Y: -1}, -1
 		}
 
 		if lines[guardPos.Y][guardPos.X-1] == '#' {
@@ -103,7 +100,7 @@ func nextGuardPosition(lines []string, guardPos Point, direction int) (Point, in
 		return guardPos, 4
 	}
 
-	return Point{-1, -1}, -1
+	return Point{X: -1, Y: -1}, -1
 }
 
 func savePosition(visitedMap [][][]int, position Point, direction int) int {

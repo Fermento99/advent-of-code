@@ -6,6 +6,11 @@ import (
 	"strings"
 )
 
+type Point struct {
+	X int
+	Y int
+}
+
 func GetInput(taskNumber string, knownInput bool) []string {
 	var data []byte
 	var err error

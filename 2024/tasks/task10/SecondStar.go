@@ -4,7 +4,7 @@ import "aoc-24/utils"
 
 func SecondStar(lines []string) int {
 	height, width := len(lines), len(lines[0])
-	dimentions := Point{width, height}
+	dimentions := Point{X: width, Y: height}
 	trailMap := make([][]int, height)
 
 	for y, line := range lines {
@@ -16,7 +16,7 @@ func SecondStar(lines []string) int {
 	for y, row := range trailMap {
 		for x, spot := range row {
 			if spot == 0 {
-				sum += getTrailheadRating(trailMap, Point{x, y}, dimentions)
+				sum += getTrailheadRating(trailMap, Point{X: x, Y: y}, dimentions)
 			}
 		}
 	}

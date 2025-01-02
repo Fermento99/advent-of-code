@@ -6,6 +6,8 @@ import (
 	"strings"
 )
 
+type Point = utils.Point
+
 var anthenaRegexString = `[A-z0-9]`
 
 type Anthena struct {
@@ -13,14 +15,10 @@ type Anthena struct {
 	Frequency byte
 }
 
-type Point struct {
-	X, Y int
-}
-
 func FirstStar(lines []string) int {
 	anthenas := getAnthenas(lines)
 	distinctFreq := getDistinctFrequencies(anthenas)
-	antinodes := calculateAntinodes(anthenas, distinctFreq, Point{len(lines[0]), len(lines)})
+	antinodes := calculateAntinodes(anthenas, distinctFreq, Point{X: len(lines[0]), Y: len(lines)})
 
 	return countDistinctAntinodes(antinodes)
 }
@@ -93,8 +91,8 @@ func getAntinodes(a, b Anthena, dimentions Point) []Point {
 	dx := a.X - b.X
 	dy := a.Y - b.Y
 
-	firstPoint := Point{a.X + dx, a.Y + dy}
-	secondPoint := Point{b.X - dx, b.Y - dy}
+	firstPoint := Point{X: a.X + dx, Y: a.Y + dy}
+	secondPoint := Point{X: b.X - dx, Y: b.Y - dy}
 
 	if isPointInDimentions(firstPoint, dimentions) {
 		antinodes = append(antinodes, firstPoint)
