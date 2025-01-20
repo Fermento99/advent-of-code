@@ -11,6 +11,10 @@ type Point struct {
 	Y int
 }
 
+func (a Point) AddPoints(b Point) Point {
+	return Point{X: a.X + b.X, Y: a.Y + b.Y}
+}
+
 func GetInput(taskNumber string, knownInput bool) []string {
 	var data []byte
 	var err error
